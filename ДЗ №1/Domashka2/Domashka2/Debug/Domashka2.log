@@ -1,0 +1,3 @@
+﻿  main.cpp
+F:\Roman Domashka\Domashka2\Domashka2\main.cpp(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+  Domashka2.vcxproj -> F:\Roman Domashka\Domashka2\Debug\Domashka2.exe

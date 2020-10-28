@@ -1,47 +1,41 @@
-﻿// 3.2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// Test.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
+
 #include <iostream>
 #include <math.h>;
 using namespace std;
-class Main {
-    int s, m, n;
-public: 
-    Main(int S, int M, int N) {
-        s = S;
-        m = M;
-        n = N;
-}
-    double it(double r) {
-        return (12 * m * (pow(1 + r, n) - 1)) / (s * pow(1 + r, n));
-    }
+
+double iteration(int monthlyPayment, int summ, int numberOfYears, double result) {
+    return (12 * monthlyPayment * (pow(1 + result, numberOfYears) - 1)) / (summ * pow(1 + result, numberOfYears));
 };
+
 int main()
 {
-    int S, m, n;
+    double lastValue = 0;
+    double result = 0.1;
 
-    double a = 2, p = 1;
-    S = 300000;
-    m = 130000;
-    n = 2;
-    cout << "S = " << S << "\nm = " << m << "\nn = " << n << "\n";
-    /*
-    cout << "Enter S" << endl;
-    cin >> S;
-    cout << "Enter m" << endl;
-    cin >> m;
-    cout << "Enter n" << endl;
-    cin >> n;
-    */
-    Main Q = Main(S, m, n);
-    double check = pow(10, -7);
-    while (abs(a - p) > check)
-    {
-        a = p;
-        p = Q.it(p);
-        //cout << p << endl;
+    int summ;
+    int monthlyPayment;
+    int numberOfYears;
+
+    cout << "Enter summ" << endl;
+    cin >> summ;
+    cout << "Enter monthlyPayment" << endl;
+    cin >> monthlyPayment;
+    cout << "Enter numberOfYears" << endl;
+    cin >> numberOfYears;
+
+    int check = pow(10, -3);
+
+    while (abs(lastValue - result) > check) {
+        lastValue = result;
+        result = iteration(monthlyPayment, summ, numberOfYears, result);
     }
-    cout << "p = " << p * 100 << "\nmter = " << (S * p * pow(1 + p, n)) / (12 * (pow(1 + p, n) - 1));
+
+    cout << "p = " << result * 100;
+
 }
+
 
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

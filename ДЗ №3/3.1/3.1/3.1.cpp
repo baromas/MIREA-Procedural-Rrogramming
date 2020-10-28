@@ -7,15 +7,16 @@ using namespace std;
 
 int main()
 {
-    int S, p, n;
+    float S, p, n;
     cout << "Enter S" << endl;
     cin >> S;
     cout << "Enter p" << endl;
-        cin >> p;
-        cout << "Enter n" << endl;
-        cin >> n;
-     
-    std::cout << "m = " << (S*p/100*pow(1+p/100,n))/(12*(pow(1+p/100,n) -1)) << "\n";
+    cin >> p;
+    cout << "Enter n" << endl;
+    cin >> n;
+    
+
+    std::cout << "m = " << (S * p / 100 * pow(1 + p / 100, n)) / (12 * (pow(1 + p / 100, n) - 1)) << "\n";
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

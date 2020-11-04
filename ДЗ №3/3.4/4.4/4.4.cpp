@@ -15,7 +15,9 @@ int main()
     std::cout << "Hello World!\n";
     */
     fstream File("321.txt", ios::out);
-    File << "de1233ic32131fdsa231h";
+    string string;
+    cin >> string;
+    File << string;
     File.close();
 
     File.open("321.txt", ios::in);
@@ -24,9 +26,13 @@ int main()
     cout << b << "\n";
     int c = 0;
     char i = b[c];
+    int lastCharacter = 0;
     while (i != '\0') {
-        if (i - '0' < 10)
-            cout << i;
+        if (i - '0' < 10) {
+        cout << i;
+        if (b[c + 1] >= 57)
+            cout << " ";
+    }
         c++;
         i = b[c];
     }

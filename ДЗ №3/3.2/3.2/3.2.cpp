@@ -25,15 +25,20 @@ int main()
     cout << "Enter numberOfYears" << endl;
     cin >> numberOfYears;
 
-    int check = pow(10, -3);
-
-    while (abs(lastValue - result) > check) {
-        lastValue = result;
-        result = iteration(monthlyPayment, summ, numberOfYears, result);
+    if (summ <= 0 || monthlyPayment <= 0 || numberOfYears < 1) {
+        cout << "Error";
     }
+    else {
 
-    cout << "p = " << result * 100;
+        int check = pow(10, -3);
 
+        while (abs(lastValue - result) > check) {
+            lastValue = result;
+            result = iteration(monthlyPayment, summ, numberOfYears, result);
+        }
+
+        cout << "p = " << result * 100;
+    }
 }
 
 

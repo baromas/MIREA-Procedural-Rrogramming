@@ -5,11 +5,22 @@
 using namespace std;
 int main()
 {
+
     int b;
+
     int c;
+
+    cout << "Enter b" << "\n";
     cin >> b;
-    cin >> c;
-    std::cout << -c/b;
+    if (b == 0) {
+        cout << "Imposible to calculate" << "\n";
+
+    }
+    else {
+        cout << "Enter c" << "\n";
+        cin >> c;
+        std::cout << -c / b;
+    }
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

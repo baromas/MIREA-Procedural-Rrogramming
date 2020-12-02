@@ -13,6 +13,15 @@ int main()
     cin >> a;
     cin >> b;
     cin >> c;
+    if (a == 0) {
+		if (b == 0)
+			cout << "Error!" << "\n";
+		else {
+			x1 = -c / b;
+			cout << ("x1 = ", x1);
+		}
+	}
+    else{
     int D = b * b - 4 * a * c;
     if (D > 0) {
         cout << (-b + sqrt(D)) / (2*a) << endl;
@@ -23,7 +32,7 @@ int main()
     }
     if (D < 0) {
         cout << "unappropriate input";
-    }
+    }}
 
 }
 
